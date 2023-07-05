@@ -28,11 +28,11 @@ public class BrickTests {
         Brick brick2 = new Brick("gray", "cement");
 
         //When
-        String foundColor1 = brick1.getColor();
-        String foundColor2 = brick2.getColor();
+        String foundMaterial1 = brick1.getMaterial();
+        String foundMaterial2 = brick2.getMaterial();
 
         //Then
-        assertAll(() -> assertEquals("red", foundColor1),
-                () -> assertEquals("gray", foundColor2));
+        assertAll(() -> assertEquals("clay", foundMaterial1),
+                () -> assertEquals("cement", foundMaterial2));
     }
 }
