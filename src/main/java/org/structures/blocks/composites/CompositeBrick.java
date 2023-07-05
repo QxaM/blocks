@@ -14,6 +14,7 @@ public class CompositeBrick implements CompositeBlock {
     public String getColor() {
         return blocks.stream()
                 .map(Block::getColor)
+                .distinct()
                 .collect(Collectors.joining(", "));
     }
 
@@ -21,6 +22,7 @@ public class CompositeBrick implements CompositeBlock {
     public String getMaterial() {
         return blocks.stream()
                 .map(Block::getMaterial)
+                .distinct()
                 .collect(Collectors.joining(", "));
     }
 
