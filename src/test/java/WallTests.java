@@ -46,4 +46,17 @@ public class WallTests {
                 () -> assertEquals("cement", foundBlocks.get(0).getMaterial()),
                 () -> assertEquals("cement", foundBlocks.get(1).getMaterial()));
     }
+
+    @Test
+    void testShouldGetCount() {
+        //Given
+        Wall wall = new Wall();
+        wall.getBlocks().addAll(initBlocks());
+
+        //When
+        int blockCount = wall.count();
+
+        //Then
+        assertEquals(4, blockCount);
+    }
 }
