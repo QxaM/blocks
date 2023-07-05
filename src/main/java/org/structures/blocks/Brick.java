@@ -1,4 +1,4 @@
-package org.structures.block;
+package org.structures.blocks;
 
 public class Brick implements Block {
 

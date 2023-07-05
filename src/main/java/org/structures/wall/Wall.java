@@ -1,6 +1,6 @@
 package org.structures.wall;
 
-import org.structures.block.Block;
+import org.structures.blocks.Block;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import org.structures.block.Brick;
+import org.structures.blocks.Brick;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;

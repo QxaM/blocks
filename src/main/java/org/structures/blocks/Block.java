@@ -1,4 +1,4 @@
-package org.structures.block;
+package org.structures.blocks;
 
 public interface Block {
     String getColor();

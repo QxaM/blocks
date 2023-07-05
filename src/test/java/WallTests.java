@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import org.structures.block.Block;
-import org.structures.block.Brick;
+import org.structures.blocks.Block;
+import org.structures.blocks.Brick;
 import org.structures.wall.Wall;
 
 import java.util.List;
