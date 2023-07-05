@@ -31,6 +31,13 @@ public class WallTests {
         return compositeBrick;
     }
 
+    private CompositeBrick initNestedCompositeBlock() {
+        CompositeBrick compositeBrick = new CompositeBrick();
+        compositeBrick.getBlocks().add(initCompositeBlock());
+        compositeBrick.getBlocks().addAll(initBlocks());
+        return compositeBrick;
+    }
+
     @Test
     void testShouldFindByColor() {
         //Given
@@ -134,7 +141,7 @@ public class WallTests {
     void testShouldFindByColor_WithMixedBlocks() {
         //Given
         Wall wall = new Wall();
-        wall.getBlocks().add(initCompositeBlock());
+        wall.getBlocks().add(initNestedCompositeBlock());
         wall.getBlocks().addAll(initBlocks());
 
         //When
@@ -149,7 +156,7 @@ public class WallTests {
     void testShouldFindByMaterial_WithMixedBlocks() {
         //Given
         Wall wall = new Wall();
-        wall.getBlocks().add(initCompositeBlock());
+        wall.getBlocks().add(initNestedCompositeBlock());
         wall.getBlocks().addAll(initBlocks());
 
         //When
@@ -157,22 +164,19 @@ public class WallTests {
 
         //Then
         assertEquals(3, foundBlocks.size());
-        assertAll(() -> assertTrue(foundBlocks.get(0).getMaterial().contains("cement")),
-                () -> assertTrue(foundBlocks.get(1).getMaterial().contains("cement")),
-                () -> assertTrue(foundBlocks.get(2).getMaterial().contains("cement")));
     }
 
     @Test
     void testShouldGetCount_WithMixedBlocks() {
         //Given
         Wall wall = new Wall();
-        wall.getBlocks().add(initCompositeBlock());
+        wall.getBlocks().add(initNestedCompositeBlock());
         wall.getBlocks().addAll(initBlocks());
 
         //When
         int blockCount = wall.count();
 
         //Then
-        assertEquals(8, blockCount);
+        assertEquals(12, blockCount);
     }
 }

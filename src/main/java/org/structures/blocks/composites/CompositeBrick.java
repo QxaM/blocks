@@ -33,6 +33,8 @@ public class CompositeBrick implements CompositeBlock {
 
     @Override
     public int count() {
-        return blocks.size();
+        return blocks.stream()
+                .mapToInt(Block::count)
+                .sum();
     }
 }
