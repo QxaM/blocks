@@ -14,8 +14,14 @@ public class Brick implements Block {
     public String getColor() {
         return color;
     }
+
     @Override
     public String getMaterial() {
         return material;
+    }
+
+    @Override
+    public int count() {
+        return 1;
     }
 }

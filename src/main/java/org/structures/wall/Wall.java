@@ -34,15 +34,8 @@ public class Wall implements Structure {
 
     @Override
     public int count() {
-        int count = 0;
-        for (Block block: blocks) {
-            if (block instanceof CompositeBrick) {
-                CompositeBlock compositeBlock = (CompositeBrick) block;
-                count += compositeBlock.getBlocks().size();
-            } else {
-                count++;
-            }
-        }
-        return count;
+        return blocks.stream()
+                .mapToInt(Block::count)
+                .sum();
     }
 }

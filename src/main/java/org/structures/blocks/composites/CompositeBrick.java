@@ -30,4 +30,9 @@ public class CompositeBrick implements CompositeBlock {
     public List<Block> getBlocks() {
         return blocks;
     }
+
+    @Override
+    public int count() {
+        return blocks.size();
+    }
 }
